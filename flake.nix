@@ -37,11 +37,12 @@
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux";
         modules = [
-          ./nixos/basic.nix
-          ./nixos/vsocde_patch.nix
+          ./nixos/basic.nix      
           ./nixos/fonts.nix
           ./nixos/plasma.nix
-          ./hosts/libvirt/configuration.nix        
+          ./nixos/vscode_patch.nix  
+          ./hosts/libvirt/configuration.nix   
+             
           ];
       };
     };
