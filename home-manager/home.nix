@@ -16,6 +16,7 @@
     # ./nvim.nix
     ./neovim/neovim.nix
     ./vscode.nix
+    ./fcitx5/fcitx.nix
   ];
 
   nixpkgs = {
