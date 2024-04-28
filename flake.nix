@@ -17,6 +17,10 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    flake-utils.follows = "nix-vscode-extensions/flake-utils";
+    nixpkgs.follows = "nix-vscode-extensions/nixpkgs";
+
     nur.url = "github:nix-community/NUR";
   };
   outputs =
