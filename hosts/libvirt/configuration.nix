@@ -30,7 +30,7 @@
     nil
     clash-meta
     kitty
-    xdg-desktop-portal-hyprland
+    #xdg-desktop-portal-hyprland
     dconf
     nixd
     #clash-geoip
