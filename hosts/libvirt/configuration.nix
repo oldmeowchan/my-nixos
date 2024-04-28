@@ -12,36 +12,16 @@
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda"; # or "nodev" for efi only
+  
   networking.hostName = "libvirt";
 
-  
-  
-  
-security.polkit.enable =true;
-
-
-  users.users.laomei = {
-    isNormalUser = true;
-    home ="/home/laomei";
-    description= "old mei";
-    extraGroups = ["wheel" "networkmanager"];
-    #hashedPassword = ""; 
-  };
-
-  programs.nix-ld.enable = true;
- 
   virtualisation.waydroid.enable = true;
+  security.polkit.enable =true;
 
-  environment = {
-    sessionVariables = {
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-    };
-  };
-
-
-
+  programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
+  
   environment.systemPackages = with pkgs; [
-    vim
     wget
     git
     direnv
@@ -55,15 +35,25 @@ security.polkit.enable =true;
     #clash-geoip
   ];
 
+  users.users.laomei = {
+    isNormalUser = true;
+    home ="/home/laomei";
+    description= "old mei";
+    extraGroups = ["wheel" "networkmanager"];
+    #hashedPassword = ""; 
+  };
+
+
+ 
+  
+
+
+
+
+
 
   networking.proxy.default = "http://192.168.122.1:7890/";
   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-
-
-
-
-
 
 }
 

@@ -36,14 +36,12 @@
       libvirt = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux";
-        
         modules = [
           ./nixos/basic.nix
+          ./nixos/vsocde_patch.nix
           ./nixos/fonts.nix
           ./nixos/plasma.nix
-          ./hosts/libvirt/configuration.nix
-          
-          
+          ./hosts/libvirt/configuration.nix        
           ];
       };
     };
