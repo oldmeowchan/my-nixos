@@ -6,5 +6,5 @@
   };
     environment.systemPackages = [
     pkgs.lunarvim
-  ];
+   ];
 }

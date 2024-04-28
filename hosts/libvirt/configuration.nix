@@ -40,7 +40,7 @@
     isNormalUser = true;
     home ="/home/laomei";
     description= "old mei";
-    extraGroups = ["wheel" "networkmanager"];
+    extraGroups = ["wheel" "networkmanager" "docker" "libvirtd"];
     #hashedPassword = ""; 
   };
 
