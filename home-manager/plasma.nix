@@ -1,5 +1,5 @@
 
-{pkgs,...}:
+{pkgs,plasma-manager,...}:
 {
   programs.plasma = {
     enable = true;

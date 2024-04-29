@@ -3,7 +3,6 @@
 {
   inputs,
   lib,
-  outputs,
   config,
   pkgs,
   ...
@@ -17,8 +16,7 @@
     # ./nvim.nix
     ./neovim/neovim.nix
     ./vscode.nix
-    ./fcitx5/fcitx.nix
-    #./plasma.nix
+    ./plasma.nix
   ];
 
   nixpkgs = {

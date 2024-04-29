@@ -31,7 +31,7 @@
     , ...
     } @ inputs:
     let
-     system = "x86_64-linux";
+
       inherit (self) outputs;
     in
     {
@@ -63,7 +63,8 @@
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
           modules = [
-            ./hosts/mainpc/boot.nix
+            ./nixos/vscode_patch.nix
+            
           ];
         };
 
