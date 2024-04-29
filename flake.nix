@@ -33,10 +33,6 @@
     let
      system = "x86_64-linux";
       inherit (self) outputs;
-      pkgs-unstable = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
     in
     {
       # NixOS configuration entrypoint
@@ -81,12 +77,11 @@
         "laomei@libvirt" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; 
           
-          extraSpecialArgs = { inherit inputs outputs  pkgs-unstable ; };
+          extraSpecialArgs = { inherit inputs outputs ; };
 
 
           modules = [ 
             ./home-manager/home.nix 
-
             ];
         };
         "root@libvirt" = home-manager.lib.homeManagerConfiguration {

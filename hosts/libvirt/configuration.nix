@@ -21,6 +21,15 @@
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+    ];
+};
+
+
   environment.systemPackages = with pkgs; [
     wget
     git
@@ -30,11 +39,13 @@
     nil
     clash-meta
     kitty
-    xdg-desktop-portal-hyprland
+    #xdg-desktop-portal-hyprland
     dconf
     nixd
     #clash-geoip
   ];
+
+
 
   users.users.laomei = {
     isNormalUser = true;

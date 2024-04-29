@@ -3,6 +3,7 @@
 {
   inputs,
   lib,
+  outputs,
   config,
   pkgs,
   ...
@@ -11,12 +12,13 @@
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
-
+    #<nixpkgs/modules/>
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./neovim/neovim.nix
     ./vscode.nix
     ./fcitx5/fcitx.nix
+    #./plasma.nix
   ];
 
   nixpkgs = {
@@ -31,6 +33,7 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+      #outputs.overlays.pkgs
     ];
     # Configure your nixpkgs instance
     config = {
@@ -61,6 +64,19 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
+
+  wayland.windowManager.sway = {
+    enable = true;
+    config = rec {
+      modifier = "Mod4";
+      # Use kitty as default terminal
+      terminal = "kitty"; 
+      startup = [
+        # Launch Firefox on start
+        {command = "firefox";}
+      ];
+    };
+  };
 
 
   # Nicely reload system units when changing configs
