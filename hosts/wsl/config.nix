@@ -17,6 +17,7 @@
     isNormalUser = true;
     home = "/home/laomei";
     description = "old mei";
+    shell= pkgs.zsh;
     extraGroups = [ "wheel" "networkmanager" "docker" "libvirtd" ];
     #hashedPassword = ""; 
   };
@@ -31,6 +32,8 @@
 
    sound.enable = true;
    hardware.pulseaudio.enable = true;
+  programs.zsh.enable = true;
+  
 
   environment.systemPackages = with pkgs; [
     vim

@@ -10,7 +10,7 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" ];
+      plugins = [ "git" ];
       theme = "robbyrussell";
     };
   };
