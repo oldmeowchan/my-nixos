@@ -19,6 +19,7 @@
     #./vscode.nix
     #./plasma.nix
     ./helix.nix
+    ./zsh.nix
   ];
 
   nixpkgs = {

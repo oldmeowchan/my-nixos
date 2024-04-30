@@ -25,6 +25,8 @@
   time.timeZone = "Asia/Shanghai";
 
   #networking.proxy.default = "http://172.29.48.1:7890/";
+  networking.proxy.httpProxy = "http://172.29.48.1:7890/";
+  networking.proxy.httpsProxy = "http://172.29.48.1:7890/";
   #networking.proxy.noProxy = "0.0.0.0,127.0.0.1,localhost,internal.domain";
 
 
