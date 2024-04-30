@@ -83,6 +83,8 @@
             wsl.enable = true;
           }
             ./nixos/vscode_patch.nix
+            ./basic.nix
+            ./hosts/wsl/config.nix
           ];
         };
 
