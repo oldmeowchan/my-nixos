@@ -52,23 +52,24 @@
           ];
         };
 
-        mainpc = nixpkgs.lib.nixosSystem{
+        mainpc = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
           modules = [
-	   ./nixos/basic
-	   ./nixos/fonts.nix
-		./nixos/plasma.nix
-           ./hosts/mainpc/config
+            ./nixos/basic.nix
+            ./nixos/fonts.nix
+            ./nixos/plasma.nix
+            ./nixos/vt.nix
+            ./hosts/mainpc/config.nix
 
           ];
         };
-        wsl = nixpkgs.lib.nixosSystem{
+        wsl = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
           modules = [
             ./nixos/vscode_patch.nix
-            
+
           ];
         };
 
@@ -77,17 +78,17 @@
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
-     
+
         # FIXME replace with your username@hostname
         "laomei@libvirt" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; 
-          
-          extraSpecialArgs = { inherit inputs outputs ; };
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+          extraSpecialArgs = { inherit inputs outputs; };
 
 
-          modules = [ 
-            ./home-manager/home.nix 
-            ];
+          modules = [
+            ./home-manager/home.nix
+          ];
         };
         "root@libvirt" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance

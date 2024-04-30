@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 {
-  nixpkgs.config.allowUnfree =true;
+  nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   #boot.kernelPackages  =  pkgs.linuxPackages_zen;
 
@@ -16,7 +16,7 @@
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "yes";
 
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     wget
     git
     curl

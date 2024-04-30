@@ -1,6 +1,8 @@
-{pkgs,...}:
+{pkgs,config,...}:
 {
 
+  virtualisation.waydroid.enable = true;
+  
 virtualisation.libvirtd = {
   enable = true;
   qemu = {
@@ -9,7 +11,7 @@ virtualisation.libvirtd = {
     swtpm.enable = true;
     ovmf = {
       enable = true;
-      packages = [(pkgs.unstable.OVMF.override {
+      packages = [(pkgs.OVMF.override {
         secureBoot = true;
         tpmSupport = true;
       }).fd];
