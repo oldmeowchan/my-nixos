@@ -56,7 +56,11 @@
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
           modules = [
-            ./hosts/mainpc/boot.nix
+	   ./nixos/basic
+	   ./nixos/fonts.nix
+		./nixos/plasma.nix
+           ./hosts/mainpc/config
+
           ];
         };
         wsl = nixpkgs.lib.nixosSystem{
