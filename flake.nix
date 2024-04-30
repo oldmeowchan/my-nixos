@@ -104,6 +104,7 @@ vscode-server.url = "github:nix-community/nixos-vscode-server";
             ./nixos/vscode_patch.nix
             ./nixos/basic.nix
             ./hosts/wsl/config.nix
+            ./nixos/devpkgs.nix
           ];
         };
 
