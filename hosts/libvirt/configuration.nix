@@ -36,7 +36,7 @@
     lunarvim
     direnv
     nixpkgs-fmt
-    nil
+    
     clash-meta
     kitty
     #xdg-desktop-portal-hyprland
