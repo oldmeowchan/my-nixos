@@ -3,7 +3,7 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
+
 
     ];
 
@@ -29,11 +29,8 @@
   networking.proxy.httpsProxy = "http://172.29.48.1:7890/";
   #networking.proxy.noProxy = "0.0.0.0,127.0.0.1,localhost,internal.domain";
 
-
    sound.enable = true;
    hardware.pulseaudio.enable = true;
-
-
 
   environment.systemPackages = with pkgs; [
     vim
@@ -41,7 +38,5 @@
     git
     curl
   ];
-
-
 
 }
