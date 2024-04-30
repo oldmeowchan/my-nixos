@@ -18,6 +18,7 @@
    # ./neovim/neovim.nix
     #./vscode.nix
     #./plasma.nix
+    ./helix.nix
   ];
 
   nixpkgs = {
