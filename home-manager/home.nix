@@ -61,7 +61,7 @@
 
   # Add stuff for your user as you see fit:
    programs.neovim.enable = true;
-   home.packages = with pkgs;[  rust-analyzer nil  ];
+   home.packages = with pkgs;[  rust-analyzer nil  telegram-desktop ];
 
   programs.home-manager.enable = true;
 

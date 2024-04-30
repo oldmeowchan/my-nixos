@@ -1,7 +1,7 @@
 { pkgs,config, ... }:
 {
   imports = [
-    ./fcitx5/fcitx.nix
+    #./fcitx5/fcitx.nix
   ];
   # Enter keyboard layout
   services.xserver.enable = true;

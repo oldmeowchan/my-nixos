@@ -17,13 +17,14 @@
 
   networking.hostName = "mainpc"; # Define your hostname.
 
-
+  programs.zsh.enable = true;
 
 
   users.users.laomei = {
     isNormalUser = true;
     home = "/home/laomei";
     description = "old mei";
+    shell= pkgs.zsh;
     extraGroups = [ "wheel" "networkmanager" "docker" "libvirtd" ];
     #hashedPassword = ""; 
   };
@@ -44,6 +45,7 @@
     vim
     wget
     git
+    wl-clipboard
   ];
 
 

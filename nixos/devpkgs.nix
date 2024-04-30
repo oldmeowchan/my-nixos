@@ -6,7 +6,7 @@
     nixd
     nixpkgs-fmt
     rust-analyzer
-
+    zsh
   ];
 
 }
