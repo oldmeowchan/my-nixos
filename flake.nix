@@ -6,6 +6,13 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+  };
+
+
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     flake-utils.follows = "nix-vscode-extensions/flake-utils";
@@ -28,6 +36,7 @@
     , nixpkgs
     , home-manager
     , plasma-manager
+    ,nixos-wsl
     , ...
     } @ inputs:
     let
@@ -68,8 +77,12 @@
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
           modules = [
+          nixos-wsl.nixosModules.default
+          {
+            system.stateVersion = "24.05";
+            wsl.enable = true;
+          }
             ./nixos/vscode_patch.nix
-
           ];
         };
 
