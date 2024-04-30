@@ -7,9 +7,9 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nixoswsl.url = "github:nix-community/NixOS-WSL/main";
-nixoswsl.inputs.nixpkgs.follows = "nixpkgs";
-nixos-wsl-vscode.url = "github:Atry/nixos-wsl-vscode";
-vscode-server.url = "github:nix-community/nixos-vscode-server";
+    nixoswsl.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-wsl-vscode.url = "github:Atry/nixos-wsl-vscode";
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
 
 
     home-manager = {
@@ -35,9 +35,9 @@ vscode-server.url = "github:nix-community/nixos-vscode-server";
     , nixpkgs
     , home-manager
     , plasma-manager
-    ,nixoswsl
-    ,nixos-wsl-vscode
-	,vscode-server
+    , nixoswsl
+    , nixos-wsl-vscode
+    , vscode-server
     , ...
     } @ inputs:
     let
@@ -78,34 +78,34 @@ vscode-server.url = "github:nix-community/nixos-vscode-server";
           specialArgs = { inherit inputs outputs; };
           system = "x86_64-linux";
           modules = [
-        nixoswsl.nixosModules.wsl
-        vscode-server.nixosModules.default
-        ({ pkgs, ... }: {
-          system = {
-            stateVersion = "unstable";
-          };
-          programs.nix-ld.enable = true;
-          services.vscode-server.enable = true;
-          environment.systemPackages = [
-            pkgs.wget
-          ];
+            nixoswsl.nixosModules.wsl
+            vscode-server.nixosModules.default
+            ({ pkgs, ... }: {
+              system = {
+                stateVersion = "unstable";
+              };
+              programs.nix-ld.enable = true;
+              services.vscode-server.enable = true;
+              environment.systemPackages = [
+                pkgs.wget
+              ];
 
-          wsl = {
-            enable = true;
-            defaultUser = "laomei";
-            extraBin = with pkgs; [
-              { src = "${coreutils}/bin/uname"; }
-              { src = "${coreutils}/bin/dirname"; }
-              { src = "${coreutils}/bin/readlink"; }
-            ];
-          };
-        })
+              wsl = {
+                enable = true;
+                defaultUser = "laomei";
+                extraBin = with pkgs; [
+                  { src = "${coreutils}/bin/uname"; }
+                  { src = "${coreutils}/bin/dirname"; }
+                  { src = "${coreutils}/bin/readlink"; }
+                ];
+              };
+            })
 
             ./nixos/vscode_patch.nix
             ./nixos/basic.nix
             ./hosts/wsl/config.nix
             ./nixos/devpkgs.nix
-           # ./nixos/systemd/clash.nix
+            # ./nixos/systemd/clash.nix
           ];
         };
 

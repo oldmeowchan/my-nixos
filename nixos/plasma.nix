@@ -17,6 +17,7 @@
     firefox
     google-chrome
     parsec-bin
+    godot_4
   ];
 
 }
