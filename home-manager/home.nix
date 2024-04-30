@@ -5,18 +5,19 @@
   lib,
   config,
   pkgs,
+  nixpkgs,
   ...
 }: {
-  # You can import other home-manager modules here
+  
   imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
+
     # inputs.nix-colors.homeManagerModule
     #<nixpkgs/modules/>
-    # You can also split up your configuration and import pieces of it here:
+
     # ./nvim.nix
-    ./neovim/neovim.nix
-    ./vscode.nix
-    ./plasma.nix
+   # ./neovim/neovim.nix
+    #./vscode.nix
+    #./plasma.nix
   ];
 
   nixpkgs = {
@@ -57,27 +58,13 @@
   };
 
   # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
+   programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-  # Enable home-manager and git
   programs.home-manager.enable = true;
 
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      modifier = "Mod4";
-      # Use kitty as default terminal
-      terminal = "kitty"; 
-      startup = [
-        # Launch Firefox on start
-        {command = "firefox";}
-      ];
-    };
-  };
 
 
-  # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -7,9 +7,8 @@
 
     ];
 
-
-
-  networking.hostName = "wsl"; # Define your hostname.
+    networking.hostName ="wsl";
+          wsl.defaultUser ="laomei";
 
 
 
@@ -25,8 +24,8 @@
 
   time.timeZone = "Asia/Shanghai";
 
-  #networking.proxy.default = "http://192.168.71.4:7890/";
-  #networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.proxy.default = "http://172.29.48.1:7890/";
+  networking.proxy.noProxy = "0.0.0.0,127.0.0.1,localhost,internal.domain";
 
 
    sound.enable = true;

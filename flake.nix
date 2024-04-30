@@ -77,6 +77,7 @@
           {
             #system.stateVersion = "24.05";
             wsl.enable = true;
+
           }
             ./nixos/vscode_patch.nix
             ./nixos/basic.nix
@@ -101,7 +102,7 @@
             ./home-manager/home.nix
           ];
         };
-        "root@libvirt" = home-manager.lib.homeManagerConfiguration {
+        "laomei@wsl" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; };
           # > Our main home-manager configuration file <
