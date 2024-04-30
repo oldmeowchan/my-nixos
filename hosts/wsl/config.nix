@@ -9,7 +9,7 @@
 
 
 
-  networking.hostName = "mainpc"; # Define your hostname.
+  networking.hostName = "wsl"; # Define your hostname.
 
 
 

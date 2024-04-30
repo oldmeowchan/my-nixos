@@ -6,11 +6,7 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-  };
-
 
 
     home-manager = {
@@ -79,11 +75,11 @@
           modules = [
           nixos-wsl.nixosModules.default
           {
-            system.stateVersion = "24.05";
+            #system.stateVersion = "24.05";
             wsl.enable = true;
           }
             ./nixos/vscode_patch.nix
-            ./basic.nix
+            ./nixos/basic.nix
             ./hosts/wsl/config.nix
           ];
         };
