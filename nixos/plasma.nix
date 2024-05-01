@@ -25,6 +25,7 @@
     godot_4
     kdePackages.discover
     qq
+    isoimagewriter
     vlc
   ];
 
