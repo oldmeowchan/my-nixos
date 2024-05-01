@@ -6,6 +6,7 @@
   fonts = {
     packages = with pkgs; [
       noto-fonts
+			dejavu_fonts
       source-han-sans-vf-otf
       source-han-serif-vf-otf
       noto-fonts-cjk
