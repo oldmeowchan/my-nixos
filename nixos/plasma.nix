@@ -9,6 +9,7 @@
   services.xserver.xkb.variant = "altgr-intl";
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
+  programs.xwayland.enable = true;
   services.flatpak.enable = true;
   #i18n.inputMethod.fcitx5.plasma6Support ;
   programs.dconf.enable = true;
