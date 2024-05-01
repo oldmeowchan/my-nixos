@@ -1,4 +1,4 @@
-{ pkgs,config, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     #./fcitx5/fcitx.nix
@@ -9,6 +9,8 @@
   services.xserver.xkb.variant = "altgr-intl";
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
+  services.flatpak.enable = true;
+  programs.dconf.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [
