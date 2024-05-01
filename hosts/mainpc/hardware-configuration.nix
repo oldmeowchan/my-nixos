@@ -9,8 +9,8 @@
     ];
 
   boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel"  "nvidia_uvm" "nvidia_modeset" "nvidia_drm" "nvidia"];
+  boot.initrd.kernelModules = [  "nvidia_uvm" "nvidia_modeset" "nvidia_drm" "nvidia"];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =

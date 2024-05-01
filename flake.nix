@@ -73,7 +73,6 @@
             ./hosts/mainpc/config.nix
             ./nixos/devpkgs.nix
             ./nixos/input/fcitx.nix
-
           ];
         };
         wsl = nixpkgs.lib.nixosSystem {
