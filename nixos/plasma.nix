@@ -10,7 +10,9 @@
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.flatpak.enable = true;
+  #i18n.inputMethod.fcitx5.plasma6Support ;
   programs.dconf.enable = true;
+  #services.desktopManager.plasma6.notoPackage = pkgs.noto-fonts;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [
@@ -20,6 +22,9 @@
     google-chrome
     parsec-bin
     godot_4
+    kdePackages.discover
+    qq
+    vlc
   ];
 
 }
