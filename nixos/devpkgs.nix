@@ -7,6 +7,7 @@
     nixpkgs-fmt
     rust-analyzer
     zsh
+    codeium
   ];
 
 }
