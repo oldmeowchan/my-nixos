@@ -72,7 +72,7 @@
             ./nixos/vt.nix
             ./hosts/mainpc/config.nix
             ./nixos/devpkgs.nix
-            ./nixos/fcitx5/fcitx.nix
+            ./nixos/input/fcitx.nix
 
           ];
         };
